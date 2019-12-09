@@ -74,7 +74,7 @@ static vmsim_addr_t sim_free_addr  = 0;
 // The highest available block number on bs
 static unsigned int block_no 	   = 1;
 
-// The array of lpt entries, used in the "big clock" algorithm
+// The array of lpt entries, used in the CLOCK algorithm
 static uint64_t ENTRIES_LENGTH = (DEFAULT_REAL_MEMORY_SIZE - PT_AREA_SIZE) / PAGESIZE;
 static pt_entry_t** entries = NULL;
 static uint64_t cur_page_no = 0;
@@ -415,7 +415,7 @@ swap(vmsim_addr_t in, pt_entry_t* out){
 	move_to_mm(in, real_space);
 }
 
-//Search: Uses "big clock" algorithm to find a non-referenced lpt entry
+//Search: Uses CLOCK algorithm to find a non-referenced lpt entry
 pt_entry_t* 
 search(){
   vmsim_addr_t pt = PT_AREA_SIZE;
