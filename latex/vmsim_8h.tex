@@ -1,0 +1,230 @@
+\hypertarget{vmsim_8h}{\section{vmsim.\+h File Reference}
+\label{vmsim_8h}\index{vmsim.\+h@{vmsim.\+h}}
+}
+
+
+The interface for the {\ttfamily vmsim} library.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for vmsim.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{vmsim_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vmsim_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{vmsim_8h_aea0cb1cd472958b65c6a163b409a22d5}{\#define {\bfseries P\+T\+E\+\_\+\+R\+E\+S\+I\+D\+E\+N\+T\+\_\+\+B\+I\+T}~0x1}\label{vmsim_8h_aea0cb1cd472958b65c6a163b409a22d5}
+
+\item 
+\hypertarget{vmsim_8h_a79cad0d5082cee52c764b431ce1d2dda}{\#define {\bfseries P\+T\+E\+\_\+\+R\+E\+F\+E\+R\+E\+N\+C\+E\+D\+\_\+\+B\+I\+T}~0x2}\label{vmsim_8h_a79cad0d5082cee52c764b431ce1d2dda}
+
+\item 
+\hypertarget{vmsim_8h_a0960c50fa38e76e51104b6413ec62fb4}{\#define {\bfseries P\+T\+E\+\_\+\+D\+I\+R\+T\+Y\+\_\+\+B\+I\+T}~0x4}\label{vmsim_8h_a0960c50fa38e76e51104b6413ec62fb4}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t}
+\item 
+typedef uint32\+\_\+t \hyperlink{vmsim_8h_a673974423c805fd8f1c3a5212540ef08}{pt\+\_\+entry\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{vmsim_8h_ad6a84783f77b840cfa7e1100d58726b6}{vmsim\+\_\+read} (void $\ast$buffer, \hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} sim\+\_\+addr, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Read data from the simulated space. \end{DoxyCompactList}\item 
+void \hyperlink{vmsim_8h_a0c0214410981366e8ec1f218221380dc}{vmsim\+\_\+write} (void $\ast$buffer, \hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} sim\+\_\+addr, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Write data into the simulated space. \end{DoxyCompactList}\item 
+void \hyperlink{vmsim_8h_a3d4bf64eb67927a46562389b97988fc5}{vmsim\+\_\+read\+\_\+real} (void $\ast$buffer, \hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} real\+\_\+addr, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Read data from the real space. \end{DoxyCompactList}\item 
+void \hyperlink{vmsim_8h_ac3c6075c6e09967fe197e04de5094f52}{vmsim\+\_\+write\+\_\+real} (void $\ast$buffer, \hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} real\+\_\+addr, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Write data into the real space. \end{DoxyCompactList}\item 
+void \hyperlink{vmsim_8h_a2f2b0d73cdb718c73fbf3046dcaec0ca}{vmsim\+\_\+map\+\_\+fault} (\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} sim\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Create a new simulated-\/to-\/real mapping for a simulated address. \end{DoxyCompactList}\item 
+\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} \hyperlink{vmsim_8h_ad2d57f1bbe23c08a1cd4f10ed60ff3e0}{vmsim\+\_\+alloc} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocate simulated memory space. \end{DoxyCompactList}\item 
+void \hyperlink{vmsim_8h_a49905ecd50563bbd6f5740023286acce}{vmsim\+\_\+free} (\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} ptr)
+\begin{DoxyCompactList}\small\item\em Deallocate simulated memory space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The interface for the {\ttfamily vmsim} library. 
+
+\begin{DoxyAuthor}{Author}
+Prof. Scott F. Kaplan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Fall 2018
+\end{DoxyDate}
+{\ttfamily vmsim} is a package that emulates a 32-\/bit virtual address space. It provides a {\itshape simulated address space} that is mapped onto a {\itshape real address space}. The real storage is created by the library, while a full 32-\/bit range of simulated addresses are mapped, on demand, onto that real storage space, which can be of any size. Space is created and mapped in 4 K\+B pages. Access to simulated storage is provided by the {\ttfamily vimsim\+\_\+read()} and {\ttfamily \hyperlink{vmsim_8h_a0c0214410981366e8ec1f218221380dc}{vmsim\+\_\+write()}} functions. 
+
+\subsection{Typedef Documentation}
+\hypertarget{vmsim_8h_a673974423c805fd8f1c3a5212540ef08}{\index{vmsim.\+h@{vmsim.\+h}!pt\+\_\+entry\+\_\+t@{pt\+\_\+entry\+\_\+t}}
+\index{pt\+\_\+entry\+\_\+t@{pt\+\_\+entry\+\_\+t}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{pt\+\_\+entry\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf pt\+\_\+entry\+\_\+t}}}\label{vmsim_8h_a673974423c805fd8f1c3a5212540ef08}
+A page table entry. \hypertarget{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{\index{vmsim.\+h@{vmsim.\+h}!vmsim\+\_\+addr\+\_\+t@{vmsim\+\_\+addr\+\_\+t}}
+\index{vmsim\+\_\+addr\+\_\+t@{vmsim\+\_\+addr\+\_\+t}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{vmsim\+\_\+addr\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf vmsim\+\_\+addr\+\_\+t}}}\label{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}
+A simulated or real address within {\ttfamily vmsim}. 
+
+\subsection{Function Documentation}
+\hypertarget{vmsim_8h_ad2d57f1bbe23c08a1cd4f10ed60ff3e0}{\index{vmsim.\+h@{vmsim.\+h}!vmsim\+\_\+alloc@{vmsim\+\_\+alloc}}
+\index{vmsim\+\_\+alloc@{vmsim\+\_\+alloc}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{vmsim\+\_\+alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vmsim\+\_\+addr\+\_\+t} vmsim\+\_\+alloc (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{vmsim_8h_ad2d57f1bbe23c08a1cd4f10ed60ff3e0}
+
+
+Allocate simulated memory space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The number of bytes to allocate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the simulated address of the a block that is at least {\ttfamily size} bytes in length. 
+\end{DoxyReturn}
+\hypertarget{vmsim_8h_a49905ecd50563bbd6f5740023286acce}{\index{vmsim.\+h@{vmsim.\+h}!vmsim\+\_\+free@{vmsim\+\_\+free}}
+\index{vmsim\+\_\+free@{vmsim\+\_\+free}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{vmsim\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void vmsim\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{ptr}
+\end{DoxyParamCaption}
+)}}\label{vmsim_8h_a49905ecd50563bbd6f5740023286acce}
+
+
+Deallocate simulated memory space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The simulated address of a memory block allocated with {\ttfamily vmsim\+\_\+alloc}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{vmsim_8h_a2f2b0d73cdb718c73fbf3046dcaec0ca}{\index{vmsim.\+h@{vmsim.\+h}!vmsim\+\_\+map\+\_\+fault@{vmsim\+\_\+map\+\_\+fault}}
+\index{vmsim\+\_\+map\+\_\+fault@{vmsim\+\_\+map\+\_\+fault}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{vmsim\+\_\+map\+\_\+fault}]{\setlength{\rightskip}{0pt plus 5cm}void vmsim\+\_\+map\+\_\+fault (
+\begin{DoxyParamCaption}
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{sim\+\_\+addr}
+\end{DoxyParamCaption}
+)}}\label{vmsim_8h_a2f2b0d73cdb718c73fbf3046dcaec0ca}
+
+
+Create a new simulated-\/to-\/real mapping for a simulated address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sim\+\_\+addr} & The simulated address for which to create the mapping.\\
+\hline
+\end{DoxyParams}
+Called when the translation of a {\itshape simulated} address fails. When this function is done, a {\itshape real} page will back the {\itshape simulated} one that contains the given address, with the page tables appropriately updated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sim\+\_\+addr} & The {\itshape simulated} address for which address translation failed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{vmsim_8h_ad6a84783f77b840cfa7e1100d58726b6}{\index{vmsim.\+h@{vmsim.\+h}!vmsim\+\_\+read@{vmsim\+\_\+read}}
+\index{vmsim\+\_\+read@{vmsim\+\_\+read}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{vmsim\+\_\+read}]{\setlength{\rightskip}{0pt plus 5cm}void vmsim\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buffer, }
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{sim\+\_\+addr, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{vmsim_8h_ad6a84783f77b840cfa7e1100d58726b6}
+
+
+Read data from the simulated space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & A pointer to a space into which to copy data from the simulated space. \\
+\hline
+{\em sim\+\_\+addr} & The simulated address from which to read the data. \\
+\hline
+{\em size} & The number of bytes to read, starting at the simulated address, into the buffer space. \\
+\hline
+\end{DoxyParams}
+\hypertarget{vmsim_8h_a3d4bf64eb67927a46562389b97988fc5}{\index{vmsim.\+h@{vmsim.\+h}!vmsim\+\_\+read\+\_\+real@{vmsim\+\_\+read\+\_\+real}}
+\index{vmsim\+\_\+read\+\_\+real@{vmsim\+\_\+read\+\_\+real}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{vmsim\+\_\+read\+\_\+real}]{\setlength{\rightskip}{0pt plus 5cm}void vmsim\+\_\+read\+\_\+real (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buffer, }
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{real\+\_\+addr, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{vmsim_8h_a3d4bf64eb67927a46562389b97988fc5}
+
+
+Read data from the real space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & A pointer to a space into which to copy data from the real space. \\
+\hline
+{\em real\+\_\+addr} & The real address from which to read the data. \\
+\hline
+{\em size} & The number of bytes to read, starting at the real address, into the buffer space.\\
+\hline
+\end{DoxyParams}
+This function is the analog to {\ttfamily \hyperlink{vmsim_8h_ad6a84783f77b840cfa7e1100d58726b6}{vmsim\+\_\+read()}}, except that the address given is the raw, {\itshape real} address, thus triggering no simulated-\/to-\/real mapping. \hypertarget{vmsim_8h_a0c0214410981366e8ec1f218221380dc}{\index{vmsim.\+h@{vmsim.\+h}!vmsim\+\_\+write@{vmsim\+\_\+write}}
+\index{vmsim\+\_\+write@{vmsim\+\_\+write}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{vmsim\+\_\+write}]{\setlength{\rightskip}{0pt plus 5cm}void vmsim\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buffer, }
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{sim\+\_\+addr, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{vmsim_8h_a0c0214410981366e8ec1f218221380dc}
+
+
+Write data into the simulated space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & A pointer to a space from which to copy data into the simulated space. \\
+\hline
+{\em sim\+\_\+addr} & The simulated address into which to write the data. \\
+\hline
+{\em size} & The number of bytes to write, starting at the simulated address, from the buffer space. \\
+\hline
+\end{DoxyParams}
+\hypertarget{vmsim_8h_ac3c6075c6e09967fe197e04de5094f52}{\index{vmsim.\+h@{vmsim.\+h}!vmsim\+\_\+write\+\_\+real@{vmsim\+\_\+write\+\_\+real}}
+\index{vmsim\+\_\+write\+\_\+real@{vmsim\+\_\+write\+\_\+real}!vmsim.\+h@{vmsim.\+h}}
+\subsubsection[{vmsim\+\_\+write\+\_\+real}]{\setlength{\rightskip}{0pt plus 5cm}void vmsim\+\_\+write\+\_\+real (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buffer, }
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{real\+\_\+addr, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{vmsim_8h_ac3c6075c6e09967fe197e04de5094f52}
+
+
+Write data into the real space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & A pointer to a space from which to copy data into the real space. \\
+\hline
+{\em real\+\_\+addr} & The real address into which to write the data. \\
+\hline
+{\em size} & The number of bytes to write, starting at the real address, from the buffer space.\\
+\hline
+\end{DoxyParams}
+This function is the analog to {\ttfamily \hyperlink{vmsim_8h_a0c0214410981366e8ec1f218221380dc}{vmsim\+\_\+write()}}, except that the address given is the raw, {\itshape real} address, thus triggering no simulated-\/to-\/real mapping. 

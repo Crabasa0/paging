@@ -1,0 +1,110 @@
+\hypertarget{random-hop_8c}{\section{random-\/hop.c File Reference}
+\label{random-hop_8c}\index{random-\/hop.\+c@{random-\/hop.\+c}}
+}
+
+
+Within a simulated space, jump randomly to locations, marking each and ending when a location is revisited.  
+
+
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}vmsim.\+h\char`\"{}}\\*
+Include dependency graph for random-\/hop.c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{random-hop_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{random-hop_8c_ab5fde4a4261bca6820d8cd5b0d3a1b8d}{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B}~1024
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{random-hop_8c_a4c03bd347423374d85d921056bd14e5c}{show\+\_\+usage\+\_\+and\+\_\+exit} (char $\ast$invocation)
+\begin{DoxyCompactList}\small\item\em Display the proper usage and end the process with an error code. \end{DoxyCompactList}\item 
+void \hyperlink{random-hop_8c_a19ca1a272fed125876eb02b534d261f3}{go} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Randomly visit simulated addresses, marking locations until an already-\/marked one is visited. \end{DoxyCompactList}\item 
+int \hyperlink{random-hop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em The entry point to the simulator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Within a simulated space, jump randomly to locations, marking each and ending when a location is revisited. 
+
+\begin{DoxyAuthor}{Author}
+Prof. Scott F. Kaplan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Fall 2018 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{random-hop_8c_ab5fde4a4261bca6820d8cd5b0d3a1b8d}{\index{random-\/hop.\+c@{random-\/hop.\+c}!B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B@{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B}}
+\index{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B@{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B}!random-\/hop.\+c@{random-\/hop.\+c}}
+\subsubsection[{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B~1024}}\label{random-hop_8c_ab5fde4a4261bca6820d8cd5b0d3a1b8d}
+The number of bytes in an kilobyte. 
+
+\subsection{Function Documentation}
+\hypertarget{random-hop_8c_a19ca1a272fed125876eb02b534d261f3}{\index{random-\/hop.\+c@{random-\/hop.\+c}!go@{go}}
+\index{go@{go}!random-\/hop.\+c@{random-\/hop.\+c}}
+\subsubsection[{go}]{\setlength{\rightskip}{0pt plus 5cm}void go (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{size}
+\end{DoxyParamCaption}
+)}}\label{random-hop_8c_a19ca1a272fed125876eb02b534d261f3}
+
+
+Randomly visit simulated addresses, marking locations until an already-\/marked one is visited. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The number of bytes in the space to be randomly visited. \\
+\hline
+\end{DoxyParams}
+\hypertarget{random-hop_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{random-\/hop.\+c@{random-\/hop.\+c}!main@{main}}
+\index{main@{main}!random-\/hop.\+c@{random-\/hop.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{random-hop_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+The entry point to the simulator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The length of the command-\/line argument vector. \\
+\hline
+{\em argv} & The vector of command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the exit code for the process, where 0 indicates success, any other value indicates error. 
+\end{DoxyReturn}
+\hypertarget{random-hop_8c_a4c03bd347423374d85d921056bd14e5c}{\index{random-\/hop.\+c@{random-\/hop.\+c}!show\+\_\+usage\+\_\+and\+\_\+exit@{show\+\_\+usage\+\_\+and\+\_\+exit}}
+\index{show\+\_\+usage\+\_\+and\+\_\+exit@{show\+\_\+usage\+\_\+and\+\_\+exit}!random-\/hop.\+c@{random-\/hop.\+c}}
+\subsubsection[{show\+\_\+usage\+\_\+and\+\_\+exit}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+usage\+\_\+and\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{invocation}
+\end{DoxyParamCaption}
+)}}\label{random-hop_8c_a4c03bd347423374d85d921056bd14e5c}
+
+
+Display the proper usage and end the process with an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em invocation} & The command-\/line text given to run the executable. \\
+\hline
+\end{DoxyParams}

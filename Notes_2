@@ -1,0 +1,13 @@
+1. Change clock algorithm so it doesnt always start at index 0.
+2. Update entries array when a page is swapped into MM.
+	a. page number math: page_no = (real_addr - PT_AREA_SIZE) / PAGESIZE;
+3. Make sure that if an lpt has block 0 in the first 20 bits and no dirty, referenced, or resident, it doesnt come up in vmsim as lpte == 0, allocating a new page and setting accordingly.
+	a. Think- is this actually a problem? 
+	b. possible fix: start at block 1 instead of block 0
+4. Keep track of which lptes have gone to which blocks so that blocks can be reused
+	a. dirty bit usage
+
+Find out why search() is returning an lpte with real address 0.
+
+
+

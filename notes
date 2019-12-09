@@ -1,0 +1,19 @@
+allocating a real page:
+If real_free_addr > real_size, we are out of physical memory. We must page swap.
+Swap a page in MM to BS then return the pointer to that page.
+
+Reading from a simulated page:
+If the simulated page is in MM:
+	If it is in tracked, add to untracked.
+	Flip the referenced bit.
+	Proceed as normal.
+If the simulated page is in BS:
+	Page swap it into MM.
+	Add page to untracked.
+	Flip the referenced bit.
+	Proceed as normal.
+
+Writing to a simulated page:
+If the simulated page is in MM:
+	
+

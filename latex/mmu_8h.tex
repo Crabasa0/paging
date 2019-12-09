@@ -1,0 +1,77 @@
+\hypertarget{mmu_8h}{\section{mmu.\+h File Reference}
+\label{mmu_8h}\index{mmu.\+h@{mmu.\+h}}
+}
+
+
+The interface for the M\+M\+U module.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}vmsim.\+h\char`\"{}}\\*
+Include dependency graph for mmu.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{mmu_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mmu_8h_a8e19b138abc93c22f9669a284e2b6a2b}{mmu\+\_\+init} (\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} upper\+\_\+pt\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Initialize the M\+M\+U. \end{DoxyCompactList}\item 
+\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} \hyperlink{mmu_8h_aa419e279930d7e9d880947d03d92c8f9}{mmu\+\_\+translate} (\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} sim\+\_\+addr, bool write\+\_\+operation)
+\begin{DoxyCompactList}\small\item\em Translate a simulated address into a physical address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The interface for the M\+M\+U module. 
+
+\begin{DoxyAuthor}{Author}
+Prof. Scott F. Kaplan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Fall 2018
+\end{DoxyDate}
+A simple module that is part of the {\ttfamily vmsim} library. This module implements the simulated {\itshape memory management unit (M\+M\+U)} that typically provides hardware mapping of virtual-\/to-\/physical addresses. 
+
+\subsection{Function Documentation}
+\hypertarget{mmu_8h_a8e19b138abc93c22f9669a284e2b6a2b}{\index{mmu.\+h@{mmu.\+h}!mmu\+\_\+init@{mmu\+\_\+init}}
+\index{mmu\+\_\+init@{mmu\+\_\+init}!mmu.\+h@{mmu.\+h}}
+\subsubsection[{mmu\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void mmu\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{upper\+\_\+pt\+\_\+addr}
+\end{DoxyParamCaption}
+)}}\label{mmu_8h_a8e19b138abc93c22f9669a284e2b6a2b}
+
+
+Initialize the M\+M\+U. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em upper\+\_\+pt\+\_\+addr} & The real base address of the upper page table.\\
+\hline
+\end{DoxyParams}
+This function stores the given real address of the upper page table. Doing so is analogous to setting a hardware M\+M\+U's {\itshape page table register (P\+T\+R)} with the physical base address of the upper P\+T. \hypertarget{mmu_8h_aa419e279930d7e9d880947d03d92c8f9}{\index{mmu.\+h@{mmu.\+h}!mmu\+\_\+translate@{mmu\+\_\+translate}}
+\index{mmu\+\_\+translate@{mmu\+\_\+translate}!mmu.\+h@{mmu.\+h}}
+\subsubsection[{mmu\+\_\+translate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vmsim\+\_\+addr\+\_\+t} mmu\+\_\+translate (
+\begin{DoxyParamCaption}
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{sim\+\_\+addr, }
+\item[{bool}]{write\+\_\+operation}
+\end{DoxyParamCaption}
+)}}\label{mmu_8h_aa419e279930d7e9d880947d03d92c8f9}
+
+
+Translate a simulated address into a physical address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sim\+\_\+addr} & The simulated address to be translated. \\
+\hline
+{\em write\+\_\+operation} & Whether the data at the given address is being {\itshape read} ({\ttfamily false}) or {\itshape written} ({\ttfamily true}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the real address to which the simulated address maps.
+\end{DoxyReturn}
+This function walks the multi-\/level page table to find the mapping from the given simulated address to its corresponding real address. If the simulated address is not yet mapped to a real address, then this function calls {\ttfamily \hyperlink{vmsim_8h_a2f2b0d73cdb718c73fbf3046dcaec0ca}{vmsim\+\_\+map\+\_\+fault()}} (mimicking an {\itshape address translation interrupt}, or {\itshape page fault}, in hardware) to have the mapping created, and then restarts the translation. 

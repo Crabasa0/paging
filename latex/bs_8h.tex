@@ -1,0 +1,86 @@
+\hypertarget{bs_8h}{\section{bs.\+h File Reference}
+\label{bs_8h}\index{bs.\+h@{bs.\+h}}
+}
+
+
+The interface for the backing store device.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}vmsim.\+h\char`\"{}}\\*
+Include dependency graph for bs.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{bs_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{bs_8h_a03018e086880812b45ca6612dd0d50fe}{void \hyperlink{bs_8h_a03018e086880812b45ca6612dd0d50fe}{bs\+\_\+init} ()}\label{bs_8h_a03018e086880812b45ca6612dd0d50fe}
+
+\begin{DoxyCompactList}\small\item\em Initialize the simulated backing store device. \end{DoxyCompactList}\item 
+bool \hyperlink{bs_8h_ac1ecd778f4899fecb6f736d83c3bb0ad}{bs\+\_\+read} (\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} buffer, unsigned int block\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Read data from a block. \end{DoxyCompactList}\item 
+bool \hyperlink{bs_8h_a377e509bff1a6c91f5eeb91623d449ca}{bs\+\_\+write} (\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} buffer, unsigned int block\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Write data to a block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The interface for the backing store device. 
+
+\begin{DoxyAuthor}{Author}
+Prof. Scott F. Kaplan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Fall 2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\hypertarget{bs_8h_ac1ecd778f4899fecb6f736d83c3bb0ad}{\index{bs.\+h@{bs.\+h}!bs\+\_\+read@{bs\+\_\+read}}
+\index{bs\+\_\+read@{bs\+\_\+read}!bs.\+h@{bs.\+h}}
+\subsubsection[{bs\+\_\+read}]{\setlength{\rightskip}{0pt plus 5cm}bool bs\+\_\+read (
+\begin{DoxyParamCaption}
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{buffer, }
+\item[{unsigned int}]{block\+\_\+number}
+\end{DoxyParamCaption}
+)}}\label{bs_8h_ac1ecd778f4899fecb6f736d83c3bb0ad}
+
+
+Read data from a block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The {\itshape real} address of a space into which to copy the block's data. \\
+\hline
+{\em block\+\_\+number} & The block number of the backing store to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the operation was successful. 
+\end{DoxyReturn}
+\hypertarget{bs_8h_a377e509bff1a6c91f5eeb91623d449ca}{\index{bs.\+h@{bs.\+h}!bs\+\_\+write@{bs\+\_\+write}}
+\index{bs\+\_\+write@{bs\+\_\+write}!bs.\+h@{bs.\+h}}
+\subsubsection[{bs\+\_\+write}]{\setlength{\rightskip}{0pt plus 5cm}bool bs\+\_\+write (
+\begin{DoxyParamCaption}
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{buffer, }
+\item[{unsigned int}]{block\+\_\+number}
+\end{DoxyParamCaption}
+)}}\label{bs_8h_a377e509bff1a6c91f5eeb91623d449ca}
+
+
+Write data to a block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & The {\itshape real} address of a space from which to copy the block's data. \\
+\hline
+{\em block\+\_\+number} & The block number of the backing store to write. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the operation was successful. 
+\end{DoxyReturn}

@@ -1,0 +1,155 @@
+\hypertarget{iterative-walk_8c}{\section{iterative-\/walk.c File Reference}
+\label{iterative-walk_8c}\index{iterative-\/walk.\+c@{iterative-\/walk.\+c}}
+}
+
+
+Create an array, and iterate over it. Use the {\ttfamily vmsim} library for the array.  
+
+
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}vmsim.\+h\char`\"{}}\\*
+Include dependency graph for iterative-\/walk.c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{iterative-walk_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{iterative-walk_8c_ab5fde4a4261bca6820d8cd5b0d3a1b8d}{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B}~1024
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{iterative-walk_8c_a4c03bd347423374d85d921056bd14e5c}{show\+\_\+usage\+\_\+and\+\_\+exit} (char $\ast$invocation)
+\begin{DoxyCompactList}\small\item\em Display the proper usage and end the process with an error code. \end{DoxyCompactList}\item 
+void \hyperlink{iterative-walk_8c_a92da6e3eac55a76919d70a529698cba3}{populate} (\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} array, unsigned int length)
+\begin{DoxyCompactList}\small\item\em Initialize an array with values such that each entry contains its own index. \end{DoxyCompactList}\item 
+void \hyperlink{iterative-walk_8c_a8934a56f7be8726dbed732e41a1639ed}{traverse} (\hyperlink{vmsim_8h_a1ad4b372d1694c5c19ee7ccada09d807}{vmsim\+\_\+addr\+\_\+t} array, unsigned int length)
+\begin{DoxyCompactList}\small\item\em Move through the array, summing the values found and storing the running sum into each position. \end{DoxyCompactList}\item 
+void \hyperlink{iterative-walk_8c_a2e85b0f86f91c0581fcd8e5bd6764568}{go} (unsigned int length, unsigned int iterations)
+\begin{DoxyCompactList}\small\item\em Create an array, initiialize it, and then traverse it repeatedly. \end{DoxyCompactList}\item 
+int \hyperlink{iterative-walk_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em The entry point to the simulator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create an array, and iterate over it. Use the {\ttfamily vmsim} library for the array. 
+
+\begin{DoxyAuthor}{Author}
+Prof. Scott F. Kaplan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Fall 2018 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{iterative-walk_8c_ab5fde4a4261bca6820d8cd5b0d3a1b8d}{\index{iterative-\/walk.\+c@{iterative-\/walk.\+c}!B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B@{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B}}
+\index{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B@{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B}!iterative-\/walk.\+c@{iterative-\/walk.\+c}}
+\subsubsection[{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+K\+B~1024}}\label{iterative-walk_8c_ab5fde4a4261bca6820d8cd5b0d3a1b8d}
+The number of bytes in an kilobyte. 
+
+\subsection{Function Documentation}
+\hypertarget{iterative-walk_8c_a2e85b0f86f91c0581fcd8e5bd6764568}{\index{iterative-\/walk.\+c@{iterative-\/walk.\+c}!go@{go}}
+\index{go@{go}!iterative-\/walk.\+c@{iterative-\/walk.\+c}}
+\subsubsection[{go}]{\setlength{\rightskip}{0pt plus 5cm}void go (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{length, }
+\item[{unsigned int}]{iterations}
+\end{DoxyParamCaption}
+)}}\label{iterative-walk_8c_a2e85b0f86f91c0581fcd8e5bd6764568}
+
+
+Create an array, initiialize it, and then traverse it repeatedly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & The size of the array to create. \\
+\hline
+{\em iterations} & The number of traversals to perform on the array. \\
+\hline
+\end{DoxyParams}
+\hypertarget{iterative-walk_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{iterative-\/walk.\+c@{iterative-\/walk.\+c}!main@{main}}
+\index{main@{main}!iterative-\/walk.\+c@{iterative-\/walk.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{iterative-walk_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+The entry point to the simulator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The length of the command-\/line argument vector. \\
+\hline
+{\em argv} & The vector of command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the exit code for the process, where 0 indicates success, any other value indicates error. 
+\end{DoxyReturn}
+\hypertarget{iterative-walk_8c_a92da6e3eac55a76919d70a529698cba3}{\index{iterative-\/walk.\+c@{iterative-\/walk.\+c}!populate@{populate}}
+\index{populate@{populate}!iterative-\/walk.\+c@{iterative-\/walk.\+c}}
+\subsubsection[{populate}]{\setlength{\rightskip}{0pt plus 5cm}void populate (
+\begin{DoxyParamCaption}
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{array, }
+\item[{unsigned int}]{length}
+\end{DoxyParamCaption}
+)}}\label{iterative-walk_8c_a92da6e3eac55a76919d70a529698cba3}
+
+
+Initialize an array with values such that each entry contains its own index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The simulated address of an array of unsigned 64-\/bit integers. \\
+\hline
+{\em length} & The number of elements in the array. \\
+\hline
+\end{DoxyParams}
+\hypertarget{iterative-walk_8c_a4c03bd347423374d85d921056bd14e5c}{\index{iterative-\/walk.\+c@{iterative-\/walk.\+c}!show\+\_\+usage\+\_\+and\+\_\+exit@{show\+\_\+usage\+\_\+and\+\_\+exit}}
+\index{show\+\_\+usage\+\_\+and\+\_\+exit@{show\+\_\+usage\+\_\+and\+\_\+exit}!iterative-\/walk.\+c@{iterative-\/walk.\+c}}
+\subsubsection[{show\+\_\+usage\+\_\+and\+\_\+exit}]{\setlength{\rightskip}{0pt plus 5cm}void show\+\_\+usage\+\_\+and\+\_\+exit (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{invocation}
+\end{DoxyParamCaption}
+)}}\label{iterative-walk_8c_a4c03bd347423374d85d921056bd14e5c}
+
+
+Display the proper usage and end the process with an error code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em invocation} & The command-\/line text given to run the executable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{iterative-walk_8c_a8934a56f7be8726dbed732e41a1639ed}{\index{iterative-\/walk.\+c@{iterative-\/walk.\+c}!traverse@{traverse}}
+\index{traverse@{traverse}!iterative-\/walk.\+c@{iterative-\/walk.\+c}}
+\subsubsection[{traverse}]{\setlength{\rightskip}{0pt plus 5cm}void traverse (
+\begin{DoxyParamCaption}
+\item[{{\bf vmsim\+\_\+addr\+\_\+t}}]{array, }
+\item[{unsigned int}]{length}
+\end{DoxyParamCaption}
+)}}\label{iterative-walk_8c_a8934a56f7be8726dbed732e41a1639ed}
+
+
+Move through the array, summing the values found and storing the running sum into each position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The simulated address of an array of unsigned 64-\/bit integers. \\
+\hline
+{\em length} & The number of elements in the array. \\
+\hline
+\end{DoxyParams}
